@@ -17,43 +17,22 @@ const Footer = () => {
         <div className="flex w-full justify-between items-end">
           <div className="flex w-fit items-end gap-[64px]">
             <div className="flex flex-col gap-[8px]">
-              <Animatedlink
-                underlineColor="white"
-                href="/Junheng_SWE_Resume.pdf"
-              >
+              <Animatedlink underlineColor="white" href="/isaac_ux_resume.pdf">
                 Resume
               </Animatedlink>
               <Animatedlink
                 underlineColor="white"
-                href="https://www.linkedin.com/in/junhengzheng"
+                href="https://www.linkedin.com/in/isaaczhng"
               >
                 Linkedin
               </Animatedlink>
-              <Animatedlink
-                underlineColor="white"
-                href="https://www.linkedin.com/in/junhengzheng"
-              >
-                Instagram
-              </Animatedlink>
             </div>
             <div className="flex flex-col gap-[8px]">
-              <Animatedlink
-                underlineColor="white"
-                href="https://github.com/junheng-zheng"
-              >
-                Home
-              </Animatedlink>
-              <Animatedlink
-                underlineColor="white"
-                href="https://www.instagram.com/juhnegg"
-              >
+              <Animatedlink underlineColor="white" href="#work">
                 Works
               </Animatedlink>
-              <Animatedlink
-                underlineColor="white"
-                href="https://www.instagram.com/juhnegg"
-              >
-                Experience
+              <Animatedlink underlineColor="white" href="#faq">
+                FAQ
               </Animatedlink>
             </div>
           </div>

@@ -81,13 +81,11 @@ export default function Home() {
           damping: 40,
         }}
         className="overflow-hidden"
+        id="home"
       >
         <Navbar />
 
-        <div
-          id="hello"
-          className="lg:max-h-[1080px] overflow-x-hidden h-[100dvh] scroll-smooth scrollbar-hide overflow-y-scroll snap-y snap-mandatory scroll-container"
-        >
+        <div className="lg:max-h-[1080px] overflow-x-hidden h-[100dvh] scroll-smooth scrollbar-hide overflow-y-scroll snap-y snap-mandatory scroll-container">
           <div className="lg:max-h-[1080px] h-[100dvh] relative lg:px-[96px] overflow-hidden px-[32px] snap-start py-[48px] gap-[24px] flex flex-col w-full">
             <img
               src="/Icon.png"
@@ -161,7 +159,9 @@ export default function Home() {
                 Computing @ RIT. I specialize in design, research, and visual
                 development.
               </Text>
-              <Button>Contact Me</Button>
+              <a href="mailto:iz5183@g.rit.edu">
+                <Button>Contact Me</Button>
+              </a>
             </div>
           </div>
           <div
@@ -217,7 +217,9 @@ export default function Home() {
                   Computing @ RIT. I specialize in design, research, and visual
                   development.
                 </Text>
-                <Button>Download Resume</Button>
+                <a href="/isaac_ux_resume.pdf" download>
+                  <Button>Download Resume</Button>
+                </a>
               </div>
             </div>
           </div>
