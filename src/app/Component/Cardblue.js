@@ -6,7 +6,7 @@ const WelcomeCard = ({ imgsrc, text }) => {
       {/* <p className="text-black/30  font-light text-[12px]">{text}</p> */}
       <img
         src={imgsrc}
-        className="w-[240px] md:w-[200px] xl:w-[280px] lg:w-[240px] aspect-square"
+        className="w-[280px] md:w-[200px] xl:w-[280px] lg:w-[240px] aspect-square"
       />
     </div>
   );
