@@ -67,7 +67,7 @@ export default function Home() {
           stiffness: 200,
           damping: 40,
         }}
-        className="lg:max-h-[1080px] h-[100dvh] w-full overflow-hidden"
+        className="lg:max-h-[1080px] h-[100vh] w-full overflow-hidden"
       >
         <Animation />
       </motion.div>
@@ -85,8 +85,8 @@ export default function Home() {
       >
         <Navbar />
 
-        <div className="lg:max-h-[1080px] overflow-x-hidden h-[100dvh] scroll-smooth scrollbar-hide overflow-y-scroll snap-y snap-mandatory scroll-container">
-          <div className="lg:max-h-[1080px] h-[100dvh] relative lg:px-[96px] overflow-hidden px-[32px] snap-start py-[48px] gap-[24px] flex flex-col w-full">
+        <div className="lg:max-h-[1080px] overflow-x-hidden h-[100vh] scroll-smooth scrollbar-hide overflow-y-scroll snap-y snap-mandatory scroll-container">
+          <div className="lg:max-h-[1080px] h-[100vh] relative lg:px-[96px] overflow-hidden px-[32px] snap-start py-[48px] gap-[24px] flex flex-col w-full">
             <img
               src="/Icon.png"
               className="w-[44px] absolute lg:hidden left-[32px] top-[32px]"
@@ -166,7 +166,7 @@ export default function Home() {
           </div>
           <div
             id="work"
-            className="lg:max-h-[1080px] h-[100dvh] scroll-smooth snap-start flex flex-col justify-end lg:gap-[128px] md:gap-[64px] gap-[128px] py-[48px] "
+            className="lg:max-h-[1080px] h-[100vh] scroll-smooth snap-start flex flex-col justify-end lg:gap-[128px] md:gap-[64px] gap-[128px] py-[48px] "
           >
             <div className="flex px-[32px] lg:px-[96px] lg:h-fit h-full flex-col gap-[24px] lg:gap-[48px]">
               <div className="h-full xl:h-[360px] w-full flex-col md:flex-row gap-[24px] flex ">
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
           <div
             id="faq"
-            className="lg:max-h-[1080px] h-[100dvh] scroll-smooth items-end snap-start flex flex-col lg:flex-row gap-[48px] justify-between px-[32px] lg:px-[96px] py-[48px]"
+            className="lg:max-h-[1080px] h-[100vh] scroll-smooth items-end snap-start flex flex-col lg:flex-row gap-[48px] justify-between px-[32px] lg:px-[96px] py-[48px]"
           >
             <div className="w-full lg:w-1/2 rounded-[24px]  h-full bg-[url(/Forest.png)] bg-cover bg-bottom" />
             <div className="h-fit w-full lg:w-1/2 justify-end flex flex-col gap-[24px] lg:gap-[48px]">
