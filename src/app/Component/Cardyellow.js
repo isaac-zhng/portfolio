@@ -12,7 +12,7 @@ const WorkCard = ({ imgsrc, profilesrc, header, children }) => {
         {/* {children} */}
         <img
           src={profilesrc}
-          className="w-[56px] border border-white/90 h-[56px] aspect-square  bg-black rounded-full"
+          className="w-[56px] hidden lg:block border border-white/90 h-[56px] aspect-square  bg-black rounded-full"
         ></img>
         {/* <Text className="text-white">{children}</Text> */}
         <div className="w-full h-fit flex flex-col gap-[4px] lg:bg-white/10 text-white lg:p-[12px] rounded-[12px] ">
