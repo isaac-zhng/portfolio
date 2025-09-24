@@ -12,7 +12,9 @@ const Footer = () => {
             By Isaac. For you. Isaac strives to make the complex simple, with
             the core question of “why” echoed through every choice of his work.
           </Text>
-          <SecondaryButton>Contact Me</SecondaryButton>
+          <a href="mailto:iz5183@g.rit.edu">
+            <SecondaryButton>Contact Me</SecondaryButton>
+          </a>
         </div>
         <div className="flex w-full justify-between items-end">
           <div className="flex w-fit items-end gap-[64px]">
