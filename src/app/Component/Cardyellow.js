@@ -3,9 +3,9 @@ import Text from "./Text";
 
 const WorkCard = ({ imgsrc, profilesrc, header, children }) => {
   return (
-    <div className="px-[12px] lg:px-[24px] relative h-full w-full overflow-hidden cursor-pointer hover:translate-y-[-24px] hover:rotate-2 transition-all duration-300   rounded-[24px] py-[12px] lg:py-[24px] border flex flex-col gap-[12px] items-center justify-center border-black/10">
+    <div className=" lg:px-[24px] relative h-fit w-full overflow-hidden cursor-pointer hover:translate-y-[-24px] hover:rotate-2 transition-all duration-300   rounded-[24px]  lg:py-[24px] border flex flex-col gap-[12px] items-center justify-center border-black/10">
       <div
-        className="w-full h-full p-[24px] gap-[16px] justify-between flex flex-col rounded-[16px] bg-cover bg-center"
+        className="w-full h-fit p-[24px] gap-[16px] justify-between flex flex-col rounded-[16px] bg-cover bg-center"
         style={{ backgroundImage: `url(${imgsrc})` }}
       >
         <div className=" bg-black/5 absolute inset-0" />
