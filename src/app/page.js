@@ -225,9 +225,9 @@ export default function Home() {
           </div>
           <div
             id="faq"
-            className="lg:max-h-[1080px] h-[100dvh] scroll-smooth items-end snap-start flex flex-col lg:flex-row gap-[48px] justify-between px-[32px] lg:px-[96px] py-[48px]"
+            className="lg:max-h-[1080px] justify-end h-[100dvh] scroll-smooth items-end snap-start flex flex-col lg:flex-row gap-[48px] px-[32px] lg:px-[96px] py-[48px]"
           >
-            <div className="w-full lg:w-1/2 rounded-[24px] hidden  h-full bg-[url(/Forest.png)] bg-cover bg-bottom" />
+            <div className="w-full lg:w-1/2 rounded-[24px] hidden lg:block  h-full bg-[url(/Forest.png)] bg-cover bg-bottom" />
             <div className="h-fit w-full lg:w-1/2 justify-end flex flex-col gap-[24px] lg:gap-[48px]">
               <motion.div
                 initial={{ x: 200, opacity: 0 }}
