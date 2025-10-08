@@ -213,9 +213,9 @@ export default function Home() {
               </motion.div>
               <div className="flex lg:flex-row flex-col gap-[24px] lg:justify-between w-full items-start lg:items-center">
                 <Text className="lg:w-[40%] text-black/70">
-                  a Product Designer and Researcher studying Human Centered
-                  Computing @ RIT. I specialize in design, research, and visual
-                  development.
+                  Some of Isaac&apos;s past internship experiences. Isaac has
+                  worked as both a AI team lead researcher and a UX Designer for
+                  Tiger Snack Box.
                 </Text>
                 <a href="/isaac_ux_resume.pdf" download>
                   <Button>Download Resume</Button>
