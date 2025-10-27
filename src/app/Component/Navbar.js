@@ -30,26 +30,19 @@ const Navbar = ({ children, className }) => {
         stiffness: 600,
         damping: 40,
       }}
-      className={`${
-        scrolled ? "px-[32px] lg:px-[256px] py-[24px]" : "px-0"
-      }  w-full fixed max-w-[1440px] hidden m-auto lg:block top-0  transition-all duration-300 z-50`}
+      className={` flex w-full 
+         
+            px-[32px] lg:px-[96px] text-black"
+         backdrop-blur-sm rounded-[12px]  justify-between py-[24px] lg:py-[12px]`}
     >
-      <div
-        className={` flex w-full ${
-          scrolled
-            ? "bg-black/80 text-white px-[32px]"
-            : "px-[32px] lg:px-[96px] text-black"
-        } backdrop-blur-sm rounded-[12px]  justify-between py-[24px] lg:py-[12px]`}
-      >
-        <img src="/Icon.png" className="w-[44px]" />
-        <div className="gap-[32px] hidden items-center lg:flex">
-          <Animatedlink href="#work" underlineColor="white">
-            Work
-          </Animatedlink>
-          <Animatedlink href="#faq" underlineColor="white">
-            Questions
-          </Animatedlink>
-        </div>
+      <img src="/Icon.png" className="w-[44px]" />
+      <div className="gap-[32px] hidden items-center lg:flex">
+        <Animatedlink href="#work" underlineColor="white">
+          Work
+        </Animatedlink>
+        <Animatedlink href="#faq" underlineColor="white">
+          Questions
+        </Animatedlink>
       </div>
     </motion.div>
   );

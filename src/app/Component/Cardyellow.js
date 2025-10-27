@@ -1,23 +1,33 @@
 import React from "react";
 import Text from "./Text";
 
-const WorkCard = ({ imgsrc, profilesrc, header, children }) => {
+const WorkCard = ({ imgsrc, profilesrc, header, children, link, disabled }) => {
   return (
-    <div className=" lg:px-[24px] relative h-fit w-full overflow-hidden cursor-pointer hover:translate-y-[-24px] hover:rotate-2 transition-all duration-300   rounded-[24px]  lg:py-[24px] border flex flex-col gap-[12px] items-center justify-center border-black/10">
-      <div
-        className="w-full h-fit p-[24px] gap-[16px] justify-between flex flex-col rounded-[16px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${imgsrc})` }}
-      >
-        <div className=" bg-black/5 absolute inset-0" />
+    <div className="h-fit md:h-full lg:px-[24px] bg-white relative md:w-full overflow-hidden cursor-pointer hover:translate-y-[-24px]  transition-all duration-300   rounded-[24px]  lg:py-[24px] border flex flex-col gap-[12px] items-center justify-center border-black/10">
+      <div className="w-full md:h-full h-fit p-[12px] md:p-[24px] gap-[16px] justify-between flex flex-col rounded-[16px] bg-cover bg-center">
         {/* {children} */}
         <img
-          src={profilesrc}
-          className="w-[56px] hidden lg:block border border-white/90 h-[56px] aspect-square  bg-black rounded-full"
-        ></img>
+          src={imgsrc}
+          className="w-full md:h-full  object-cover rounded-[12px]"
+        />
         {/* <Text className="text-white">{children}</Text> */}
-        <div className="w-full h-fit flex flex-col gap-[4px] lg:bg-white/10 text-white lg:p-[12px] rounded-[12px] ">
+        <div className="w-full h-fit flex bg-black flex-col gap-[12px]  text-white p-[24px] rounded-[12px] ">
           <p className="font-medium">{header}</p>
           <Text className="text-white/90">{children}</Text>
+          {!disabled ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white/90 text-black hover:bg-white w-full flex justify-center items-center py-[12px] rounded-[12px]"
+            >
+              View Case Study
+            </a>
+          ) : (
+            <a className="bg-white text-black opacity-75 cursor-not-allowed w-full flex justify-center items-center py-[12px] rounded-[12px]">
+              Case Study Coming Soon
+            </a>
+          )}
         </div>
       </div>
       <div className="absolute group-hover:max-h-100 max-h-0 gap-[4px] flex justify-between items-end overflow-hidden bottom-0 left-0 w-full bg-white group-hover:py-[24px] transition-all duration-300 px-[24px]">

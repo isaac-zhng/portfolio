@@ -83,9 +83,8 @@ export default function Home() {
         className="overflow-hidden"
         id="home"
       >
-        <Navbar />
-
         <div className="lg:max-h-[1080px] overflow-x-hidden h-[100dvh] scroll-smooth scrollbar-hide overflow-y-scroll snap-y snap-mandatory scroll-container">
+          <Navbar />
           <div className="lg:max-h-[1080px] h-[100dvh] relative lg:px-[96px] overflow-hidden px-[32px] snap-start py-[48px] gap-[24px] flex flex-col w-full">
             <img
               src="/Icon.png"
@@ -166,26 +165,28 @@ export default function Home() {
           </div>
           <div
             id="work"
-            className="lg:max-h-[1080px] h-[100dvh] scroll-smooth snap-start flex flex-col justify-end lg:gap-[128px] md:gap-[64px] gap-[128px] py-[48px] "
+            className="lg:max-h-[1080px] md:h-[100dvh] scroll-smooth snap-start flex flex-col-reverse md:flex-col justify-end lg:gap-[128px] md:gap-[64px] gap-[128px] py-[48px] "
           >
-            <div className="flex px-[32px] lg:px-[96px] lg:h-fit h-full flex-col gap-[24px] lg:gap-[48px]">
-              <div className="h-full xl:h-[360px] w-full flex-col md:flex-row gap-[24px] flex ">
+            <div className="flex px-[32px] lg:px-[96px] lg:h-fit h-full flex-col-reverse md:flex-col gap-[24px] lg:gap-[48px]">
+              <div className="flex-1 w-full flex-col md:flex-row gap-[12px] md:gap-[24px] flex ">
                 <WorkCard
-                  imgsrc="/Bluegradient.png"
-                  profilesrc="/Experience/rit.png"
-                  header="UX Researcher @ RIT (Co-op)"
-                >
-                  Led a team of 5+ at RIT on AI support for ESL, DHH, and
-                  neurodivergent students, producing a paper and collaborating.
-                </WorkCard>
-                <WorkCard
-                  imgsrc="/Orangegradient.png"
-                  profilesrc="/Experience/tigersnackbox.png"
+                  imgsrc="/tiger.png"
                   header="UX Designer @ Tiger Snack Box "
+                  link="https://medium.com/@iz5183/pack-9956b14dfe0c"
                 >
                   Case study for Tiger Snack Box’s game: surveyed 30+ users,
                   analyzed competitors, and improved timed flows by 23%.
                 </WorkCard>
+                <WorkCard
+                  imgsrc="/uniqlo.png"
+                  profilesrc="/Experience/tigersnackbox.png"
+                  header="Focused Redesign on the Uniqlo Website "
+                  disabled={true}
+                >
+                  Case study for Uniqlo, a global apparel retailer: conducted
+                  user research and redesigned key flows to enhance usability.
+                </WorkCard>
+
                 {/* <WorkCard
                   imgsrc="/Yellowgradient.png"
                   header="Graphic Designer @ Infinity Educational Programs"
@@ -206,21 +207,21 @@ export default function Home() {
                 }}
                 viewport={{ once: true, amount: 0.2 }} // triggers when 20% is visible
               >
-                <img
-                  src="Worktext.png"
-                  className="lg:h-[100px] h-[35px]  w-auto"
-                />
+                <div className="w-full flex-col md:flex-row gap-[16px] items-start flex md:items-center justify-between">
+                  <img
+                    src="Worktext.png"
+                    className="lg:h-[100px] h-[35px]  w-auto"
+                  />
+                  <Text className="block md:hidden">
+                    Some of Isaac&apos;s past internship experiences and
+                    projects. Isaac has worked as both a AI team lead researcher
+                    and a UX Designer for Tiger Snack Box.
+                  </Text>
+                  <a href="/isaac_ux_resume.pdf" download>
+                    <Button>Download Resume</Button>
+                  </a>
+                </div>
               </motion.div>
-              <div className="flex lg:flex-row flex-col gap-[24px] lg:justify-between w-full items-start lg:items-center">
-                <Text className="lg:w-[40%] text-black/70">
-                  Some of Isaac&apos;s past internship experiences. Isaac has
-                  worked as both a AI team lead researcher and a UX Designer for
-                  Tiger Snack Box.
-                </Text>
-                <a href="/isaac_ux_resume.pdf" download>
-                  <Button>Download Resume</Button>
-                </a>
-              </div>
             </div>
           </div>
           <div
