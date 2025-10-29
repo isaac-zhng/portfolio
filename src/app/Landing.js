@@ -1,5 +1,6 @@
 import Rounded from "./Component/Rounded";
 import Musicplayer from "./Component/Musicplayer";
+import Animatedname from "./Component/Animatedname";
 const Landing = () => {
   return (
     <div
@@ -33,7 +34,7 @@ const Landing = () => {
         <div className=" border border-white/24 text-[12px] w-fit px-[16px] py-[12px] rounded-[12px] text-white flex items-center justify-center">
           Hey There 👋
         </div>
-        <img src="/text.png" alt="text" />
+        <Animatedname fill="white" />
         <p className="text-white/90 md:w-1/2">
           A Product Designer and Researcher studying Human Centered Computing @
           RIT. I specialize in design, research, and visual development.

@@ -5,6 +5,8 @@ import Text from "./Text";
 import SecondaryButton from "./SecondaryButton";
 import Rounded from "./Rounded";
 import Backtop from "./Backtop";
+import { motion } from "framer-motion";
+import Animatedname from "./Animatedname";
 const Footer = () => {
   return (
     <div className="xl:p-[24px] lg:p-[16px] md:p-[12px]">
@@ -30,7 +32,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-[#1D1D28]/60 pointer-events-none" />
-        <img src="/text.png" alt="text" className="z-[1]" />
+        <Animatedname fill="white" />
+
         <div className="  w-full gap-[36px] z-[1] flex flex-col">
           {/* <div className="flex lg:flex-row flex-col justify-between w-full items-start gap-[24px] lg:items-center">
             <Text className="lg:w-[40%] text-white">

@@ -64,49 +64,36 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="max-w-[1440px] scroll-smooth overflow-hidden w-[100%] m-auto "
+      className="relative max-w-[1440px]  bg-[#E3E5F6]    brightness-95  w-[100%] m-auto "
     >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1920 1080"
+        preserveAspectRatio="none"
+        className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-[2000]"
+      >
+        <filter id="noiseFilter">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="10"
+            numOctaves="2"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+      </svg>
+      <Animation />
       <motion.div
-        initial={{ height: "auto", opacity: 100 }}
-        animate={{ height: 0, opacity: 0 }}
+        initial={{ height: "0px" }}
+        animate={{ height: "auto" }}
         transition={{
-          delay: 2.2,
+          delay: 3,
           type: "spring",
           stiffness: 200,
           damping: 40,
         }}
-        className="lg:max-h-[1080px] h-[100dvh] w-full overflow-hidden"
+        className="overflow-hidden"
       >
-        <Animation />
-      </motion.div>
-      <motion.div
-        initial={{ height: 0, opacity: 0 }}
-        animate={{ height: "auto", opacity: 100 }}
-        transition={{
-          delay: 2.2,
-          type: "spring",
-          stiffness: 800,
-          damping: 40,
-        }}
-        className="bg-[#E3E5F6]  scroll-smooth  h-[100dvh] overflow-y-scroll relative brightness-95"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1920 1080"
-          preserveAspectRatio="none"
-          className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-[2000]"
-        >
-          <filter id="noiseFilter">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="10"
-              numOctaves="2"
-              stitchTiles="stitch"
-            />
-          </filter>
-          <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-        </svg>
-        <Landing />
         <Experiencesection />
         <Projectsection />
         <Footer />
