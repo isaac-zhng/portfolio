@@ -17,9 +17,9 @@ const Animatedname = ({ className, fill = "white" }) => {
 
   return (
     <motion.svg
-      viewBox="0 0 1190 127"
+      viewBox="0 0 1136 127"
       xmlns="http://www.w3.org/2000/svg"
-      className={`h-auto w-full ${className}`}
+      className={`h-auto w-full  ${className}`}
       fill="none"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
