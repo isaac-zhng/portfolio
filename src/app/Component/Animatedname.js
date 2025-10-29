@@ -19,49 +19,52 @@ const Animatedname = ({ className, fill = "red" }) => {
     <motion.svg
       viewBox="0 0 1136 125"
       xmlns="http://www.w3.org/2000/svg"
-      className={`h-auto w-[100%] ${className}`}
+      className={`h-auto w-full ${className}`}
       fill="none"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.2 }} // keep animating when in view
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      style={{ zIndex: 20 }}
+      style={{
+        zIndex: 20,
+        WebkitTransform: "translate3d(0,0,0)", // fix iOS GPU compositing
+      }}
     >
-      {/* Outline animation on scroll */}
+      {/* Outline animation */}
       {paths.map((d, i) => (
         <motion.path
           key={`outline-${i}`}
           d={d}
           stroke={fill}
-          strokeWidth={1}
-          fill="transparent"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          strokeWidth={1.5}
+          fill="none"
+          vectorEffect="non-scaling-stroke" // ensures visible scaling
+          initial={{ pathLength: 0, opacity: 1 }}
+          whileInView={{ pathLength: 1, opacity: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{
-            duration: 1.6,
+            duration: 1.5,
             delay: i * 0.15,
             ease: "easeInOut",
           }}
         />
       ))}
 
-      {/* Fill fade-in after outline */}
-      {paths.map((d, i) => (
-        <motion.path
-          key={`fill-${i}`}
-          d={d}
-          fill={fill}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{
-            delay: 3,
-            duration: 0.8,
-            ease: "easeOut",
-          }}
-        />
-      ))}
+      {/* Fill all at once after drawing */}
+      <motion.g
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{
+          delay: 1.6 + paths.length * 0.15, // after all lines finish
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+      >
+        {paths.map((d, i) => (
+          <path key={`fill-${i}`} d={d} fill={fill} />
+        ))}
+      </motion.g>
     </motion.svg>
   );
 };
