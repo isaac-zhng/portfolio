@@ -32,7 +32,7 @@ const Experiencesection = () => {
 
       <div className="flex flex-col gap-[20px] xl:p-[24px] xl:rounded-[12px] xl:border border-[#5A56A2]/20">
         <Experience
-          header="Accessibility and AI Research Team Lead"
+          header="Accessibility & AI Research Team Lead"
           text="@ Rochester Institute of Technology"
           underline
         >
