@@ -52,7 +52,7 @@ const Animatedname = ({ className, fill = "white" }) => {
         <motion.path
           key={i}
           d={d}
-          stroke={fill}
+          stroke="#ff5c3b"
           strokeWidth={1.5}
           fill="transparent"
           initial={{ pathLength: 0, opacity: 0 }}
@@ -74,6 +74,7 @@ const Animatedname = ({ className, fill = "white" }) => {
           key={`fill-${i}`}
           d={d}
           fill={fill}
+          stroke="white"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{
