@@ -6,10 +6,13 @@ const Animatedlink = ({
   underlineColor = "black",
   active = false,
   href = "#",
+  newTab = false,
 }) => {
   return (
     <Link
       href={href}
+      target={newTab ? "_blank" : "_self"}
+      rel={newTab ? "noopener noreferrer" : ""}
       className="group cursor-pointer font-light text-[14px] relative w-fit"
       onClick={onClick}
     >

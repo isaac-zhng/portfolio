@@ -23,7 +23,7 @@ const Animation = () => {
             stiffness: 200,
             damping: 15,
           }}
-          className="flex gap-[24px]"
+          className="flex gap-[16px]"
         >
           <motion.div
             initial={{ rotate: 0, scale: 0, x: 96 }}
@@ -34,7 +34,7 @@ const Animation = () => {
               stiffness: 200,
               damping: 15,
             }}
-            className="w-[64px] lg:w-[96px] rounded-[12px] bg-white z-[0] aspect-square bg-[url(/Orangegradient.png)] bg-cover "
+            className="w-[64px] lg:w-[96px] rounded-[8px] bg-white z-[0] aspect-square bg-[url(/musicbg.png)] bg-cover "
           />
           <motion.div
             initial={{ rotate: 0 }}
@@ -44,7 +44,7 @@ const Animation = () => {
               stiffness: 200,
               damping: 15,
             }}
-            className="w-[64px] lg:w-[96px] rounded-[12px] bg-white z-[2] aspect-square bg-[url(/Bluegradient.png)] bg-cover "
+            className="w-[64px] lg:w-[96px] rounded-[8px] bg-white z-[2] aspect-square bg-[url(/musicbg.png)] bg-cover "
           />
           <motion.div
             initial={{ rotate: 0, scale: 0, x: -96 }}
@@ -55,7 +55,7 @@ const Animation = () => {
               stiffness: 200,
               damping: 15,
             }}
-            className="w-[64px] lg:w-[96px] rounded-[12px] bg-white z-[0] aspect-square bg-[url(/Yellowgradient.png)] bg-cover "
+            className="w-[64px] lg:w-[96px] rounded-[8px] bg-white z-[0] aspect-square bg-[url(/musicbg.png)] bg-cover "
           />
         </motion.div>
       </motion.div>
