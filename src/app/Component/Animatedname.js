@@ -41,13 +41,14 @@ const Animatedname = ({ className, fill = "white" }) => {
 
   return (
     <svg
+      ref={ref}
       width="1136"
       height="127"
       viewBox="0 0 1136 125"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
-      className={className + " w-full h-full "}
+      className={className + " w-full h-full z-10"}
     >
       {paths.map((d, i) => (
         <motion.path
@@ -57,7 +58,11 @@ const Animatedname = ({ className, fill = "white" }) => {
           strokeWidth={1.5}
           fill="transparent"
           initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
+          animate={
+            isInView
+              ? { pathLength: 1, opacity: 1 }
+              : { pathLength: 0, opacity: 0 }
+          }
           transition={{
             duration: 2,
             ease: "easeInOut",
@@ -65,14 +70,14 @@ const Animatedname = ({ className, fill = "white" }) => {
           }}
         />
       ))}
-      {/* fade in final solid fill */}
+
       {paths.map((d, i) => (
         <motion.path
           key={`fill-${i}`}
           d={d}
           fill={fill}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{
             delay: 2.5 + i * 0.05,
             duration: 0.6,
