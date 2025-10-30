@@ -41,6 +41,32 @@ const Animation = () => {
         className="w-full overflow-hidden dynamic-radius justify-end pb-[64px] relative xl:gap-[24px] gap-[12px]  flex-col flex  xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px]  bg-[url('/isaac.png')] bg-cover bg-center"
       >
         <motion.div
+          initial={{ scale: 0, rotate: 90 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{
+            delay: 3,
+            type: "spring",
+            stiffness: 200,
+            damping: 40,
+          }}
+          className="absolute hidden lg:flex gap-[24px] opacity-30 justify-between items-center top-0 left-0 w-full h-full p-[20px]"
+        >
+          <div className="gap-[24px] h-full flex flex-col justify-between">
+            <div className=" border-l-1 border-t-1  border-lime-500 rounded-tl-[4px] w-[20px] h-[20px] " />
+            <div className="h-full w-[1px] bg-lime-500" />
+            <div className=" border-l-1 border-b-1  border-lime-500 rounded-bl-[4px] w-[20px] h-[20px] " />
+          </div>
+          <div className="h-full w-full flex flex-col justify-between">
+            <div className="h-[1px] w-full bg-lime-500" />
+            <div className="h-[1px] w-full bg-lime-500" />
+          </div>
+          <div className="gap-[24px] h-full items-end  flex flex-col justify-between ">
+            <div className=" border-r-1 border-t-1  border-lime-500 rounded-tr-[4px] w-[20px] h-[20px] " />
+            <div className="h-full w-[1px] bg-lime-500" />
+            <div className=" border-r-1 border-b-1  border-lime-500 rounded-br-[4px] w-[20px] h-[20px] " />
+          </div>
+        </motion.div>
+        <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
@@ -84,9 +110,11 @@ const Animation = () => {
               stiffness: 200,
               damping: 40,
             }}
-            className=" border border-white/24 text-[12px] w-fit px-[16px] py-[12px] rounded-[12px] text-white flex items-center justify-center"
+            className=" border border-white/24 text-[12px] gap-[8px] w-fit px-[16px] py-[12px] rounded-[12px] text-white flex items-center justify-center"
           >
-            Hey There 👋
+            <div className="w-[12px] aspect-square rounded-full bg-lime-500" />
+            {/* Hey There 👋 */}
+            Available for Work
           </motion.div>
 
           <motion.div

@@ -3,8 +3,7 @@ const Mediancard = () => {
     <a
       href="https://medium.com/@iz5183"
       target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center  rounded-[12px] group cursor-pointer text-white  overflow-hidden bg-[url('/musicbg.png')] bg-cover bg-center justify-center gap-[12px]"
+      className="flex items-center  rounded-[12px] group cursor-pointer text-white  overflow-hidden bg-gray-800 bg-cover bg-center justify-center gap-[12px]"
     >
       <div className="p-[20px] flex items-center justify-center gap-[12px]">
         <div className="w-[64px] h-[64px] bg-[url('/medium.png')] bg-cover bg-center rounded-[8px]" />

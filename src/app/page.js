@@ -64,7 +64,7 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="relative max-w-[1440px]  bg-[#E3E5F6]    brightness-95  w-[100%] m-auto "
+      className="cursor-crosshair relative max-w-[1440px]  bg-[#E3E5F6]    brightness-95  w-[100%] m-auto "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

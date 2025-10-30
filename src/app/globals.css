@@ -71,7 +71,7 @@ body {
 
 @media (min-width: 1280px) {
   .dynamic-radius {
-    --radius: 14px; /* desktop */
+    --radius: 12px; /* desktop */
   }
 }
 
@@ -88,5 +88,15 @@ body {
 @media (min-width: 1024px) {
   .dynamic-text {
     width: 100%;
+  }
+}
+
+.dynamic-spacing-project {
+  --spacing: 12px;
+}
+
+@media (max-width: 768px) {
+  .dynamic-spacing-project {
+    --spacing: 0px;
   }
 }

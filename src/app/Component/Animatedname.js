@@ -52,7 +52,7 @@ const Animatedname = ({ className, fill = "white" }) => {
         <motion.path
           key={i}
           d={d}
-          stroke="#ff5c3b"
+          stroke="oklch(76.8% 0.233 130.85)"
           strokeWidth={1.5}
           fill="transparent"
           initial={{ pathLength: 0, opacity: 0 }}
