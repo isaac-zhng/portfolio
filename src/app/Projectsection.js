@@ -1,11 +1,20 @@
 import Project from "./Component/Project";
 import Rounded from "./Component/Rounded";
 import Mediancard from "./Component/Mediancard";
+import { motion } from "framer-motion";
 const Projectsection = () => {
   return (
-    <div
+    <motion.div
+      initial={{ padding: "0px" }}
+      whileInView={{ padding: "var(--radius)" }}
+      transition={{
+        type: "spring",
+        stiffness: 200,
+        damping: 40,
+      }}
+      viewport={{ once: true, amount: 0.2 }}
       id="projects"
-      className="xl:p-[24px] overflow-hidden bg-white lg:rounded-b-[24px]"
+      className=" overflow-hidden bg-white dynamic-radius lg:rounded-b-[24px]"
     >
       <div className="xl:px-[64px] lg:px-[64px] overflow-hidden relative xl:rounded-[12px] lg:py-[64px] xl:gap-[64px] lg:gap-[48px] flex flex-col  bg-[url('/isaac.png')] bg-cover bg-center">
         <div className="absolute top-0 left-0 w-full h-full bg-[#1D1D28]/60 pointer-events-none" />
@@ -51,7 +60,7 @@ const Projectsection = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

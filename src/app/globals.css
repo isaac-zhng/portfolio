@@ -71,6 +71,22 @@ body {
 
 @media (min-width: 1280px) {
   .dynamic-radius {
-    --radius: 24px; /* desktop */
+    --radius: 14px; /* desktop */
+  }
+}
+
+.dyamic-text {
+  --width: 100%;
+}
+
+@media (min-width: 768px) {
+  .dynamic-text {
+    --width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dynamic-text {
+    width: 100%;
   }
 }

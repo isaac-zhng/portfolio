@@ -73,7 +73,7 @@ const Animation = () => {
             stiffness: 200,
             damping: 40,
           }}
-          className="absolute font-light w-full xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px] py-[64px] left-0 flex flex-col gap-[24px] justify-end items-starth-full"
+          className="absolute font-light w-full xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px] py-[64px] left-0 flex flex-col gap-[20px] justify-end items-starth-full"
         >
           <motion.div
             initial={{ y: -200, opacity: 0, height: "0px" }}
@@ -89,9 +89,19 @@ const Animation = () => {
             Hey There 👋
           </motion.div>
 
-          <div className="w-full">
+          <motion.div
+            initial={{ width: "100%" }}
+            animate={{ width: "var(--width)" }}
+            transition={{
+              delay: 3,
+              type: "spring",
+              stiffness: 200,
+              damping: 40,
+            }}
+            className="dynamic-text"
+          >
             <Animatedname fill="white" />
-          </div>
+          </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 300, height: "0px" }}
             animate={{ opacity: 100, y: 0, height: "auto" }}

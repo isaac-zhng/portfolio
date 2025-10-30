@@ -10,8 +10,8 @@ const Experience = ({ header, text, children, underline }) => {
           underline ? "" : ""
         } justify-between items-center cursor-pointer group w-full`}
       >
-        <div className="flex flex-col items-start gap-[8px]">
-          <p>{header}</p>
+        <div className="flex flex-col justify-start items-start gap-[8px]">
+          <p className="text-left">{header}</p>
           <p className="text-[12px] text-black/50">{text}</p>
         </div>
         <div
