@@ -49,15 +49,15 @@ const Project = ({ imgsrc, header, text, link, comingSoon, figmaLink }) => {
       </div>
       {!comingSoon && (
         <div className="relative">
-          <div className="top-1/2 opacity-24 z-[20] -translate-y-1/2 w-[32px] h-[32px] bg-[#5A56A2] rounded-[12px] flex items-center justify-center right-[24px]  absolute">
+          {/* <div className="top-1/2 opacity-24 z-[20] -translate-y-1/2 w-[32px] h-[32px] bg-[#5A56A2] rounded-[12px] flex items-center justify-center right-[24px]  absolute">
             <i className="fa-solid fa-arrow-right"></i>
-          </div>
+          </div> */}
           <div className="overflow-x-scroll  relative scrollbar-hide ">
             <div className="gap-[16px] px-[32px] xl:px-[64px] w-fit flex">
               {imgsrc.map((img, index) => (
                 <div
                   key={index}
-                  className="w-[300px] xl:w-[400px] h-[280px] bg-black/80 rounded-[12px]"
+                  className="w-[300px] xl:w-full h-[280px] bg-black/80 rounded-[12px]"
                 >
                   <img
                     src={img}
