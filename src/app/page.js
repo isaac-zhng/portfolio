@@ -70,7 +70,7 @@ export default function Home() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 1080"
         preserveAspectRatio="none"
-        className="absolute inset-0 hidden md:block w-full h-full opacity-30 pointer-events-none z-[2000]"
+        className="absolute inset-0   w-full h-full opacity-30 pointer-events-none z-[2000]"
       >
         <filter id="noiseFilter">
           <feTurbulence
@@ -82,6 +82,7 @@ export default function Home() {
         </filter>
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg>
+
       <Animation />
       <motion.div
         initial={{ height: "0px" }}
