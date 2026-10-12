@@ -1,13 +1,14 @@
 import Rounded from "./Component/Rounded";
 import Musicplayer from "./Component/Musicplayer";
 import Animatedname from "./Component/Animatedname";
+import { ArrowRight } from "./Component/Icons";
 const Landing = () => {
   return (
     <div
       id="about"
       className="xl:p-[24px] p-[8px] lg:p-[16px] md:p-[12px] bg-white relative"
     >
-      <div className="pt-[320px] md:rounded-[8px] xl:rounded-[12px] rounded-[8px] xl:pt-[320px] relative  bg-[url('/isaac.png')] bg-cover bg-center xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px] font-light flex flex-col xl:gap-[24px] gap-[16px] bg-black pb-[32px]">
+      <div className="pt-[320px] md:rounded-[8px] xl:rounded-[12px] rounded-[8px] xl:pt-[320px] relative  bg-[url('/isaac.jpg')] bg-cover bg-[position:center_70%] brightness-95 xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px] font-light flex flex-col xl:gap-[24px] gap-[16px] bg-black pb-[32px]">
         {/* <div className="hidden lg:flex absolute top-0 right-0">
           <Rounded width={24} height={24} fill="white" />
           <div className="relative items-end flex flex-col">
@@ -40,14 +41,14 @@ const Landing = () => {
           RIT. I specialize in design, research, and visual development.
         </p>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=iz5183@g.rit.edu"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=isaaclfzhang@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#5A56A2]/36 border group gap-[0px] hover:gap-[8px] transition-all duration-300 border-white/10 backdrop-blur-sm w-fit px-[24px] py-[16px] rounded-[12px] text-white flex items-center justify-center"
         >
           Contact Me
           <span className="group-hover:scale-100 scale-0 text-[0px] group-hover:text-[16px] transition-all duration-300">
-            {"->"}
+            <ArrowRight />
           </span>
         </a>
       </div>

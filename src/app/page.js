@@ -8,22 +8,11 @@ import Text from "./Component/Text";
 import WorkCard from "./Component/Cardyellow";
 import Footer from "./Component/Footer";
 import Button from "./Component/Button";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Animation from "./Component/Animation";
-import Experience from "./Component/Experience";
-import Landing from "./Landing";
 import Experiencesection from "./Experiencesection";
 import Projectsection from "./Projectsection";
-import Noise from "./Noise";
 export default function Home() {
-  const cards = [
-    { imgsrc: "/Bluegradient.png", text: "Welcome!" },
-    // { imgsrc: "/Orangegradient.png", text: "Welcome!" },
-    // { imgsrc: "/Orange.png", text: "I make the complex simple." },
-    // { imgsrc: "/rainbow.png", text: "And back it up with statistics." },
-  ];
-  const [index, setIndex] = useState(0);
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -53,52 +42,18 @@ export default function Home() {
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % cards.length);
-    }, 200);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div
       id="home"
-      className="cursor-crosshair relative max-w-[1440px]  bg-[#E3E5F6]    brightness-95  w-[100%] m-auto "
+      className="relative page-grain max-w-[1440px] bg-[#E3E5F6] w-[100%] m-auto "
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1920 1080"
-        preserveAspectRatio="none"
-        className="absolute inset-0   w-full h-full opacity-30 pointer-events-none z-[2000]"
-      >
-        <filter id="noiseFilter">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="10"
-            numOctaves="2"
-            stitchTiles="stitch"
-          />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-      </svg>
-
       <Animation />
-      <motion.div
-        initial={{ height: "0px" }}
-        animate={{ height: "auto" }}
-        transition={{
-          delay: 3,
-          type: "spring",
-          stiffness: 200,
-          damping: 40,
-        }}
-        className="overflow-hidden"
-      >
-        <Experiencesection />
-        <Projectsection />
-        <Footer />
-      </motion.div>
+      {/* Below the fold. These used to fade in behind the intro's delay, so for
+          the first second of the visit they were invisible too. They render
+          immediately now. */}
+      <Experiencesection />
+      <Projectsection />
+      <Footer />
     </div>
   );
 }

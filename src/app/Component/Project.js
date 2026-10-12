@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Lock } from "./Icons";
+
 const Project = ({
   imgsrc,
   header,
@@ -6,7 +10,13 @@ const Project = ({
   comingSoon,
   figmaLink,
   tags,
+  imagePosition = "center 70%",
+  imageOverlay,
 }) => {
+  // Call sites pass the cover as a single-element array; next/image needs one
+  // concrete source.
+  const cover = Array.isArray(imgsrc) ? imgsrc[0] : imgsrc;
+
   return (
     <div className="flex flex-col lg:flex-row px-[32px] lg:px-[64px] xl:px-[32px] lg:gap-[108px]">
       <div className="lg:w-1/2 py-[32px] md:py-[48px] lg:py-[80px]   xl:px-[20px] flex flex-col gap-[12px]">
@@ -26,17 +36,17 @@ const Project = ({
         </div>
         <div className="flex gap-[12px]">
           {!comingSoon ? (
-            <a
+            <Link
               href={link}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={link.startsWith("/") ? undefined : "_blank"}
+              rel={link.startsWith("/") ? undefined : "noopener noreferrer"}
               className="text-[#1E1E35]  bg-white border group gap-[0px] hover:gap-[8px] transition-all duration-300 border-white/10 backdrop-blur-sm w-fit px-[24px] py-[16px] rounded-[12px]  flex items-center justify-center"
             >
               Case Study
               <span className="group-hover:scale-100 scale-0 text-[0px] group-hover:text-[16px] transition-all duration-300">
-                {"->"}
+                <ArrowRight />
               </span>
-            </a>
+            </Link>
           ) : (
             <a
               href={link}
@@ -46,7 +56,7 @@ const Project = ({
             >
               Coming Soon
               <span className="group-hover:scale-100 scale-0 text-[0px] group-hover:text-[16px] transition-all duration-300">
-                <i className="fa-solid fa-lock"></i>
+                <Lock />
               </span>
             </a>
           )}
@@ -59,7 +69,7 @@ const Project = ({
             >
               Figma File
               <span className="group-hover:scale-100 scale-0 text-[0px] group-hover:text-[16px] transition-all duration-300">
-                {"->"}
+                <ArrowRight />
               </span>
             </a>
           )}
@@ -67,16 +77,32 @@ const Project = ({
       </div>
       <div className="lg:w-1/2 relative flex overflow-hidden md:p-[24px] md:bg-black/20 md:rounded-t-[12px] lg:rounded-none lg:border-l lg:border-r border-white/20">
         <div className="inset-[24px] z-4000 absolute bg-gray-500/5" />
-        {imgsrc ? (
-          <img
-            src={imgsrc}
+        {cover ? (
+          <Image
+            src={cover}
             alt={header}
+            width={2000}
+            height={1000}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className=" object-cover flex-1 h-[240px] md:h-[280px] lg:h-full shadow-lg xl:rounded-[12px] rounded-t-[8px] z-[3000] "
           />
         ) : (
-          <div className="flex-1 bg-[url('/isaac.png')] h-[240px] md:h-[280px] lg:h-full  flex-col gap-[12px] bg-cover bg-center rounded-[12px] flex items-center justify-center">
-            <i className="fa-solid fa-lock text-white text-[32px]"></i>
-            <p className="shadow-lg">Project Coming Soon</p>
+          <div className="relative flex-1 h-[240px] md:h-[280px] lg:h-full overflow-hidden gap-[12px] rounded-[12px] flex flex-col items-center justify-center">
+            <Image
+              src="/isaac.jpg"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover brightness-95"
+              style={{ objectPosition: imagePosition }}
+            />
+            {imageOverlay && (
+              <div className={`absolute inset-0 ${imageOverlay}`} aria-hidden="true" />
+            )}
+            <div className="relative z-10 flex flex-col items-center justify-center gap-[12px]">
+              <Lock className="text-white text-[32px]" />
+              <p className="shadow-lg">Project Coming Soon</p>
+            </div>
           </div>
         )}
       </div>

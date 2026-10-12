@@ -158,7 +158,7 @@ export default function Home() {
                 Computing @ RIT. I specialize in design, research, and visual
                 development.
               </Text>
-              <a href="mailto:iz5183@g.rit.edu">
+              <a href="mailto:isaaclfzhang@gmail.com">
                 <Button>Contact Me</Button>
               </a>
             </div>
@@ -217,7 +217,7 @@ export default function Home() {
                     projects. Isaac has worked as both a AI team lead researcher
                     and a UX Designer for Tiger Snack Box.
                   </Text>
-                  <a href="/isaac_ux_resume.pdf" download>
+                  <a href="/isaac_resume.pdf" download>
                     <Button>Download Resume</Button>
                   </a>
                 </div>

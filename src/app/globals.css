@@ -19,6 +19,16 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -38,19 +48,42 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
-.noise {
-  position: relative;
-}
-
-.noise::before {
+/* Static film-grain overlay.
+   This used to be a live <svg> with an feTurbulence filter stretched over the
+   whole document. Because it sat inside the page's `brightness` filter, the
+   browser re-evaluated that turbulence over the entire page height every time
+   anything in the subtree animated. A small tiled background image is
+   rasterised once (180x180) and then just tiled, so it costs nothing while
+   the page animates. */
+.page-grain::after {
   content: "";
-  position: absolute;
+  /* Fixed to the viewport rather than stretched over the document.
+     As `absolute; inset: 0` this covered the whole page (~3150px tall), so
+     every frame that repainted the page during the intro also had to repaint
+     the entire grain layer. Pinning it to the viewport gives it a stable
+     composited layer, and the grain is uniform noise so it looks identical
+     while scrolling. Width is centred and capped to match #home's box. */
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
-  height: 100%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.3'/%3E%3C/svg%3E");
+  max-width: 1440px;
+  height: 100dvh;
+  z-index: 2000;
   pointer-events: none;
+  opacity: 0.3;
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  /* Push the overlay onto its own compositor layer, rasterised once.
+     Without this it shares a layer with the hero content, so every frame of
+     the intro reveal forced the compositor to re-rasterise the whole viewport
+     including this noise texture -- a ~530ms stall at 1440x795 on a 2x display.
+     translateZ(0) is the belt-and-braces promotion for browsers that do not
+     honour will-change on a pseudo-element. */
+  will-change: transform;
+  transform: translateX(-50%) translateZ(0);
+  backface-visibility: hidden;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .dynamic-radius {

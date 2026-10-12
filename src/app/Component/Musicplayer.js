@@ -1,3 +1,5 @@
+import { List, Pause, SkipBack, SkipForward } from "./Icons";
+
 const Musicplayer = () => {
   return (
     <div className="flex items-center text-white rounded-[12px] overflow-hidden bg-[url('/musicbg.png')] bg-cover bg-center justify-center gap-[12px]">
@@ -10,11 +12,11 @@ const Musicplayer = () => {
           </div>
           <div className="flex gap-[64px]">
             <div className="flex gap-[12px]  ">
-              <i className="fa-solid cursor-pointer hover:scale-110 transition-all duration-300 fa-backward"></i>
-              <i className="fa-solid cursor-pointer hover:scale-110 transition-all duration-300 fa-pause"></i>
-              <i className="fa-solid cursor-pointer hover:scale-110 transition-all duration-300 fa-forward"></i>
+              <SkipBack className="cursor-pointer hover:scale-110 transition-all duration-300" />
+              <Pause className="cursor-pointer hover:scale-110 transition-all duration-300" />
+              <SkipForward className="cursor-pointer hover:scale-110 transition-all duration-300" />
             </div>
-            <i className="fa-solid cursor-pointer hover:scale-110 transition-all duration-300 fa-list"></i>
+            <List className="cursor-pointer hover:scale-110 transition-all duration-300" />
           </div>
         </div>
       </div>

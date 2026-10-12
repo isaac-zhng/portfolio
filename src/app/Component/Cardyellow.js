@@ -1,5 +1,6 @@
 import React from "react";
 import Text from "./Text";
+import { ArrowRight } from "./Icons";
 
 const WorkCard = ({ imgsrc, profilesrc, header, children, link, disabled }) => {
   return (
@@ -36,7 +37,7 @@ const WorkCard = ({ imgsrc, profilesrc, header, children, link, disabled }) => {
           <Text>A focused redesign on the current Uniqlo Wesbite</Text>
         </div>
         <p className="group-hover:-rotate-45 group-hover:delay-400 transition-all duration-200">
-          {"->"}
+          <ArrowRight />
         </p>
       </div>
     </div>

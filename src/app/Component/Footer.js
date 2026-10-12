@@ -5,12 +5,21 @@ import Text from "./Text";
 import SecondaryButton from "./SecondaryButton";
 import Rounded from "./Rounded";
 import Backtop from "./Backtop";
+import { ArrowRight } from "./Icons";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Animatedname from "./Animatedname";
 const Footer = () => {
   return (
     <div className="xl:p-[12px] lg:p-[12px] md:p-[12px]">
-      <footer className="z-[1] relative px-[32px] lg:px-[64px] xl:px-[128px]  py-[40px] xl:gap-[128px] xl:py-[64px]  md:rounded-[8px] xl:rounded-[12px] overflow-hidden  flex flex-col bg-[url('/isaac.png')] bg-cover bg-center justify-center text-[14px]  items-center text-white gap-[64px]">
+      <footer className="z-[1] relative px-[32px] lg:px-[64px] xl:px-[128px]  py-[40px] xl:gap-[128px] xl:py-[64px]  md:rounded-[8px] xl:rounded-[12px] overflow-hidden  flex flex-col justify-center text-[14px]  items-center text-white gap-[64px]">
+        <Image
+          src="/isaac.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_70%] brightness-95"
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-[#1D1D28]/0 pointer-events-none" />
         <div className="hidden z-20 items-end md:flex absolute bottom-0 right-0">
           <Rounded
@@ -37,11 +46,11 @@ const Footer = () => {
         <div className="  w-full gap-[36px] z-[1] flex flex-col">
           {/* <div className="flex lg:flex-row flex-col justify-between w-full items-start gap-[24px] lg:items-center">
             <Text className="lg:w-[40%] text-white">
-              By Isaac. For you. Isaac strives to make the complex simple, with
-              the core question of “why” echoed through every choice of his
+              Made by me, for you. I strive to make the complex simple, with
+              the core question of “why” echoed through every choice of my
               work.
             </Text>
-            <a href="mailto:iz5183@g.rit.edu">
+            <a href="mailto:isaaclfzhang@gmail.com">
               <SecondaryButton>Contact Me</SecondaryButton>
             </a>
           </div> */}
@@ -54,7 +63,7 @@ const Footer = () => {
               <div className="flex flex-col gap-[8px]">
                 <Animatedlink
                   underlineColor="white"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=iz5183@g.rit.edu"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=isaaclfzhang@gmail.com"
                   newTab={true}
                 >
                   Email
@@ -63,7 +72,7 @@ const Footer = () => {
                   target="_blank"
                   underlineColor="white"
                   newTab={true}
-                  href="/isaac_ux_resume.pdf"
+                  href="/isaac_resume.pdf"
                 >
                   Resume
                 </Animatedlink>

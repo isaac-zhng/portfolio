@@ -1,3 +1,5 @@
+import { ArrowRight } from "./Icons";
+
 const Mediancard = () => {
   return (
     <a
@@ -13,7 +15,7 @@ const Mediancard = () => {
             <div className="flex items-center gap-[4px]">
               <p className="font-medium text-white">View my Medium </p>
               <span className="text-white -rotate-45 group-hover:rotate-0 transition-all duration-300">
-                {"->"}
+                <ArrowRight />
               </span>
             </div>
           </div>

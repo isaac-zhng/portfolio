@@ -36,9 +36,9 @@ const Projectsection = () => {
             PROJECTS{" "}
           </h2>
           <p className="text-white/90 md:w-1/2">
-            Some of Isaac&apos;s Projects. Isaac likes to combine his skills in
-            design, research, and visual development to create projects that are
-            both functional and aesthetically pleasing.
+            I bring teams together to turn complex ideas into shipped
+            products—aligning strategy, engineering, and design from early
+            planning through development and delivery.
           </p>
         </div>
         <div className="xl:px-[128px]  xl:border 3-[3000] border-white/10 bg-[#8B8EAC]/10 backdrop-blur-xs   flex flex-col font-light text-white ">
@@ -50,16 +50,18 @@ const Projectsection = () => {
             ]}
             header="PACK!"
             text="A Mobile Puzzle Game for Tiger Snack Box, an international snack box company. I was hired as a UI/UX Designer to design the game and the website."
-            link="https://medium.com/@iz5183/pack-9956b14dfe0c"
+            link="/projects/pack"
             figmaLink="https://www.figma.com/design/ncwvxsxmQiO9UKTgyYNWeJ/PACK--Mobile-Game?node-id=302-84498&t=8lEYesEWfz0EjCzO-1"
             tags={["UI/UX Design", "Mobile Game", "UX Research"]}
           />
           <div className="w-full h-[1px] bg-white/10" />
           <Project
-            header="Fixing Uniqlo's Navigation Flow"
-            text="A focused redesign on the current Uniqlo Wesbite"
+            header="WorthIt?"
+            text="A React Native expense-tracking app built with Expo and TypeScript, featuring a route-based gas cost optimizer that ranks stations along driving routes by true net savings."
+            imagePosition="center 60%"
+            imageOverlay="bg-[#5A56A2]/20 mix-blend-multiply"
             comingSoon
-            tags={["UI/UX Design", "Website Redesign", "UX Research"]}
+            tags={["React Native", "Expo", "TypeScript"]}
           />
         </div>
       </div>

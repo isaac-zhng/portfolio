@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { ChevronDown } from "./Icons";
 const Experience = ({ header, text, children, underline }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -18,11 +19,11 @@ const Experience = ({ header, text, children, underline }) => {
           className="relative cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <i
-            className={`fa-solid  cursor-pointer text-black hover:scale-110 transition-all duration-300 fa-chevron-down ${
+          <ChevronDown
+            className={`cursor-pointer text-black hover:scale-110 transition-all duration-300 ${
               isOpen ? "rotate-180" : "group-hover:-rotate-90"
             }`}
-          ></i>
+          />
           <div className="w-[32px] opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[32px] bg-black/10 rounded-full flex items-center justify-center" />
         </div>
       </button>
