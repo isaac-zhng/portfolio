@@ -19,67 +19,67 @@ import { ArrowRight } from "./Icons";
 const Animation = () => {
   return (
     <div id="about" className="w-full bg-white dynamic-radius p-[var(--radius)]">
-      <div className="w-full h-[90dvh] overflow-hidden rounded-[12px] justify-end pb-[64px] relative xl:gap-[24px] gap-[12px]  flex-col flex xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px]">
-        {/* Was a CSS background, so the browser always pulled the full 1.5 MB
-            PNG. Going through next/image lets the server send a right-sized
-            AVIF/WebP instead. `priority` because this is the hero. */}
-        <Image
-          src="/isaac.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[center_70%] brightness-95"
-        />
-        <div className="absolute hidden lg:flex gap-[24px] justify-between items-center top-0 left-0 w-full h-full p-[20px] opacity-30">
-          <div className="gap-[24px] h-full flex flex-col justify-between">
-            <div className=" border-l-1 border-t-1  border-lime-500 rounded-tl-[4px] w-[20px] h-[20px] " />
-            <div className="h-full w-[1px] bg-lime-500" />
-            <div className=" border-l-1 border-b-1  border-lime-500 rounded-bl-[4px] w-[20px] h-[20px] " />
-          </div>
-          <div className="h-full w-full flex flex-col justify-between">
-            <div className="h-[1px] w-full bg-lime-500" />
-            <div className="h-[1px] w-full bg-lime-500" />
-          </div>
-          <div className="gap-[24px] h-full items-end  flex flex-col justify-between ">
-            <div className=" border-r-1 border-t-1  border-lime-500 rounded-tr-[4px] w-[20px] h-[20px] " />
-            <div className="h-full w-[1px] bg-lime-500" />
-            <div className=" border-r-1 border-b-1  border-lime-500 rounded-br-[4px] w-[20px] h-[20px] " />
-          </div>
+      <div className="relative flex min-h-[420px] w-full flex-col justify-end gap-[12px] overflow-hidden rounded-[12px] bg-[#1E1E35] lg:h-[90dvh] lg:min-h-0 xl:gap-[24px]">
+        <div className="relative aspect-[157/100] w-full shrink-0 lg:absolute lg:inset-0 lg:aspect-auto">
+          {/* Keep the original image, object-fit, and focal point unchanged. */}
+          <Image
+            src="/isaac.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_70%] brightness-95"
+          />
         </div>
-        <div className="flex absolute top-0 left-0 origin-top-left ">
-          <div className="relative items-start flex flex-col">
-            <div className="w-fit bg-white h-fit md:pb-[12px] pr-[8px] pb-[8px]  md:pr-[12px] rounded-br-[12px] ">
-              <Image
-                src="/profilepic.png"
-                alt=""
-                width={64}
-                height={64}
-                className="w-[64px] h-[64px] rounded-[12px] object-cover"
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute hidden lg:flex gap-[24px] justify-between items-center top-0 left-0 w-full h-full p-[20px] opacity-30">
+            <div className="gap-[24px] h-full flex flex-col justify-between">
+              <div className=" border-l-1 border-t-1  border-lime-500 rounded-tl-[4px] w-[20px] h-[20px] " />
+              <div className="h-full w-[1px] bg-lime-500" />
+              <div className=" border-l-1 border-b-1  border-lime-500 rounded-bl-[4px] w-[20px] h-[20px] " />
+            </div>
+            <div className="h-full w-full flex flex-col justify-between">
+              <div className="h-[1px] w-full bg-lime-500" />
+              <div className="h-[1px] w-full bg-lime-500" />
+            </div>
+            <div className="gap-[24px] h-full items-end flex flex-col justify-between">
+              <div className=" border-r-1 border-t-1  border-lime-500 rounded-tr-[4px] w-[20px] h-[20px] " />
+              <div className="h-full w-[1px] bg-lime-500" />
+              <div className=" border-r-1 border-b-1  border-lime-500 rounded-br-[4px] w-[20px] h-[20px] " />
+            </div>
+          </div>
+          <div className="flex absolute top-0 left-0 origin-top-left">
+            <div className="relative items-start flex flex-col">
+              <div className="w-fit bg-white h-fit md:pb-[12px] pr-[8px] pb-[8px] md:pr-[12px] rounded-br-[12px]">
+                <Image
+                  src="/profilepic.png"
+                  alt=""
+                  width={64}
+                  height={64}
+                  className="w-[64px] h-[64px] rounded-[12px] object-cover"
+                />
+              </div>
+              <Rounded
+                width={24}
+                height={24}
+                fill="white"
+                className="rotate-270"
               />
             </div>
-            <Rounded
-              width={24}
-              height={24}
-              fill="white"
-              className="rotate-270"
-            />
+            <Rounded width={24} height={24} fill="white" className="rotate-270" />
           </div>
-          <Rounded width={24} height={24} fill="white" className="rotate-270" />
         </div>
-        <div className="absolute bottom-0 font-light w-full xl:px-[128px] lg:px-[64px] lg:pb-[64px] px-[32px] py-[64px] left-0 flex flex-col gap-[20px] justify-end">
+        <div className="relative z-10 flex w-full flex-col items-start gap-[16px] px-[24px] pb-[32px] sm:px-[32px] lg:absolute lg:bottom-0 lg:left-0 lg:gap-[20px] lg:px-[64px] lg:pb-[64px] xl:px-[128px]">
           <div className=" border border-white/24 text-[12px] gap-[8px] w-fit px-[16px] py-[12px] rounded-[12px] text-white flex items-center justify-center">
             <div className="w-[12px] aspect-square rounded-full bg-lime-500" />
             Available for Work
           </div>
 
-          {/* Kept as a sizing wrapper: `--width` is the width the old animation
-              settled on, and the name SVG is `w-full h-full`, so it needs a
-              box to fill. */}
+          {/* The name mark scales to the available width at each breakpoint. */}
           <div className="dynamic-text" style={{ width: "var(--width, 100%)" }}>
             <Animatedname fill="white" />
           </div>
-          <p className="text-white/90 md:w-1/2">
+          <p className="text-white/90 lg:w-1/2">
             A Product Manager and Researcher studying Human-Centered Computing
             @ RIT. I specialize in management, research, and design.
           </p>

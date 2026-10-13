@@ -344,8 +344,8 @@ function DesignTokenBoard() {
       <Image
         src="/Pack/article/13-design-tokens.png"
         alt="Original PACK! design-token board showing the Forta typeface and type scale, primary and secondary color palette, and four-point spacing system"
-        width={1024}
-        height={856}
+        width={2000}
+        height={1671}
         sizes="(max-width: 768px) 100vw, 1100px"
         className="h-auto w-full rounded-[10px] object-contain"
       />
@@ -408,16 +408,21 @@ export default function PackCaseStudy() {
           <p className="mb-[12px] text-[12px] font-semibold tracking-[0.2em] text-[#5A56A2]">HOW I APPROACHED IT</p>
           <h2 className="text-[32px] font-bold leading-none xl:text-[64px]">A connected path from insight to handoff</h2>
         </div>
-        <div className="grid items-stretch gap-[16px] md:grid-cols-2 xl:grid-cols-4">
+        <div className="border-t border-[#1E1E35]/15">
           {process.map((item) => (
-            <article key={item.step} className="flex h-full flex-col rounded-[12px] border border-[#1E1E35]/10 bg-[#E3E5F6]/30 p-[20px] md:p-[24px]">
-              <div className="mb-[20px] flex items-center gap-[12px]">
-                <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#5A56A2]/10 text-[12px] font-semibold text-[#5A56A2]">{item.step}</span>
+            <article key={item.step} className="grid gap-y-[16px] border-b border-[#1E1E35]/15 py-[24px] md:grid-cols-[minmax(160px,0.72fr)_minmax(0,1.8fr)_minmax(140px,0.62fr)] md:items-start md:gap-x-[32px] md:py-[32px] xl:gap-x-[48px]">
+              <div className="flex items-baseline gap-[16px]">
+                <span className="text-[32px] font-light leading-none tracking-[-0.06em] text-[#5A56A2] md:text-[40px]">{item.step}</span>
                 <h3 className="text-[20px] font-semibold">{item.title}</h3>
               </div>
-              <p className="mb-[12px] text-[14px] font-semibold leading-relaxed text-[#1E1E35]/80">{item.text}</p>
-              <p className="text-[14px] leading-relaxed text-black/65">{item.activities}</p>
-              <p className="mt-auto min-h-[56px] border-t border-black/10 pt-[20px] text-[12px] font-medium text-[#5A56A2]"><span className="mr-[6px] uppercase tracking-[0.12em] text-black/45">Output</span>{item.output}</p>
+              <div>
+                <p className="text-[14px] font-semibold leading-relaxed text-[#1E1E35]/85">{item.text}</p>
+                <p className="mt-[10px] text-[14px] leading-relaxed text-black/65">{item.activities}</p>
+              </div>
+              <div className="flex items-baseline gap-[10px] border-l-2 border-[#5A56A2]/25 pl-[14px] md:block md:self-stretch md:pl-[20px]">
+                <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.14em] text-black/45">Output</span>
+                <p className="text-[13px] font-medium leading-relaxed text-[#5A56A2] md:mt-[8px]">{item.output}</p>
+              </div>
             </article>
           ))}
         </div>
