@@ -56,7 +56,7 @@ const Experiencesection = () => {
       <div className="flex flex-col gap-[20px] xl:p-[24px] xl:rounded-[12px] xl:border border-[#5A56A2]/20">
         <Experience
           header="Technical Product Manager"
-          text="@ International Business Machines"
+          text="@ IBM"
           underline
         >
           <p className="text-[14px] text-black/50">
