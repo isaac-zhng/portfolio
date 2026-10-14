@@ -19,7 +19,8 @@ import { ArrowRight } from "./Icons";
 const Animation = () => {
   return (
     <div id="about" className="w-full bg-white dynamic-radius p-[var(--radius)]">
-      <div className="relative flex min-h-[420px] w-full flex-col justify-end gap-[12px] overflow-hidden rounded-[12px] bg-[#1E1E35] lg:h-[90dvh] lg:min-h-0 xl:gap-[24px]">
+      <div className="relative flex min-h-[420px] w-full flex-col justify-end gap-[12px] overflow-hidden rounded-[12px] bg-[#1E1E35] lg:h-[min(90dvh,810px)] lg:min-h-0 xl:gap-[24px]">
+        {/* Keep the zoomed-out desktop frame at its 100% height; zoom-in still follows the viewport. */}
         <div className="relative aspect-[157/100] w-full shrink-0 lg:absolute lg:inset-0 lg:aspect-auto">
           {/* Keep the original image, object-fit, and focal point unchanged. */}
           <Image
