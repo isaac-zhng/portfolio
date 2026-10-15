@@ -19,9 +19,9 @@ import { ArrowRight } from "./Icons";
 const Animation = () => {
   return (
     <div id="about" className="w-full bg-white dynamic-radius p-[var(--radius)]">
-      <div className="relative flex min-h-[420px] w-full flex-col justify-end gap-[12px] overflow-hidden rounded-[12px] bg-[#1E1E35] lg:h-[min(90dvh,810px)] lg:min-h-0 xl:gap-[24px]">
+      <div className="relative flex min-h-[420px] w-full flex-col justify-end gap-[12px] overflow-hidden rounded-[12px] bg-[#1E1E35] md:h-[min(90dvh,810px)] md:min-h-0 xl:gap-[24px]">
         {/* Keep the zoomed-out desktop frame at its 100% height; zoom-in still follows the viewport. */}
-        <div className="relative aspect-[157/100] w-full shrink-0 lg:absolute lg:inset-0 lg:aspect-auto">
+        <div className="relative aspect-[157/100] w-full shrink-0 md:absolute md:inset-0 md:aspect-auto">
           {/* Keep the original image, object-fit, and focal point unchanged. */}
           <Image
             src="/isaac.jpg"
@@ -33,7 +33,7 @@ const Animation = () => {
           />
         </div>
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute hidden lg:flex gap-[24px] justify-between items-center top-0 left-0 w-full h-full p-[20px] opacity-30">
+          <div className="absolute hidden md:flex gap-[24px] justify-between items-center top-0 left-0 w-full h-full p-[20px] opacity-30">
             <div className="gap-[24px] h-full flex flex-col justify-between">
               <div className=" border-l-1 border-t-1  border-lime-500 rounded-tl-[4px] w-[20px] h-[20px] " />
               <div className="h-full w-[1px] bg-lime-500" />
@@ -70,7 +70,7 @@ const Animation = () => {
             <Rounded width={24} height={24} fill="white" className="rotate-270" />
           </div>
         </div>
-        <div className="relative z-10 flex w-full flex-col items-start gap-[16px] px-[24px] pb-[32px] sm:px-[32px] lg:absolute lg:bottom-0 lg:left-0 lg:gap-[20px] lg:px-[64px] lg:pb-[64px] xl:px-[128px]">
+        <div className="relative z-10 flex w-full flex-col items-start gap-[16px] px-[24px] pb-[32px] sm:px-[32px] md:absolute md:bottom-0 md:left-0 md:gap-[20px] md:px-[48px] md:pb-[48px] lg:px-[64px] lg:pb-[64px] xl:px-[128px]">
           <div className=" border border-white/24 text-[12px] gap-[8px] w-fit px-[16px] py-[12px] rounded-[12px] text-white flex items-center justify-center">
             <div className="w-[12px] aspect-square rounded-full bg-lime-500" />
             Available for Work
@@ -80,7 +80,7 @@ const Animation = () => {
           <div className="dynamic-text" style={{ width: "var(--width, 100%)" }}>
             <Animatedname fill="white" />
           </div>
-          <p className="text-white/90 lg:w-1/2">
+          <p className="text-white/90 md:w-1/2">
             A Product Manager and Researcher studying Human-Centered Computing
             @ RIT. I specialize in management, research, and design.
           </p>

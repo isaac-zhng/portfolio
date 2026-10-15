@@ -6,7 +6,7 @@ const Experiencesection = () => {
   return (
     <div
       id="experience"
-      className="py-[32px] lg:py-[48px] relative bg-white lg:px-[64px] xl:px-[128px] px-[32px] font-light flex border-t border-b border-black/10 flex-col gap-[48px]"
+      className="py-[32px] md:py-[40px] lg:py-[48px] relative bg-white px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[128px] font-light flex border-t border-b border-black/10 flex-col gap-[40px] md:gap-[48px]"
     >
       <div className="absolute top-0  hidden xl:block left-0 w-full h-full px-[64px] pointer-events-none">
         <motion.div
@@ -32,7 +32,7 @@ const Experiencesection = () => {
         ></motion.div>
       </div>
       <div className="flex flex-col md:gap-[16px] gap-[20px]">
-        <h2 className="text-[32px] xl:text-[64px] leading-none font-bold">
+        <h2 className="text-[32px] md:text-[48px] xl:text-[64px] leading-none font-bold">
           EXPERIENCE
         </h2>
         <p className="text-black/90 md:w-1/2">

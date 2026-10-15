@@ -11,8 +11,8 @@ import Image from "next/image";
 import Animatedname from "./Animatedname";
 const Footer = () => {
   return (
-    <div className="xl:p-[12px] lg:p-[12px] md:p-[12px]">
-      <footer className="z-[1] relative px-[32px] lg:px-[64px] xl:px-[128px]  py-[40px] xl:gap-[128px] xl:py-[64px]  md:rounded-[8px] xl:rounded-[12px] overflow-hidden  flex flex-col justify-center text-[14px]  items-center text-white gap-[64px]">
+    <div className="sm:p-[8px] md:p-[12px]">
+      <footer className="z-[1] relative px-[24px] sm:px-[32px] md:px-[64px] xl:px-[128px] py-[40px] md:gap-[80px] xl:gap-[128px] xl:py-[64px] sm:rounded-[8px] xl:rounded-[12px] overflow-hidden flex flex-col justify-center text-[14px] items-center text-white gap-[48px]">
         <Image
           src="/isaac.jpg"
           alt=""
@@ -21,7 +21,7 @@ const Footer = () => {
           className="object-cover object-[center_70%] brightness-95"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-[#1D1D28]/0 pointer-events-none" />
-        <div className="hidden z-20 items-end md:flex absolute bottom-0 right-0">
+        <div className="hidden z-20 items-end sm:flex absolute bottom-0 right-0">
           <Rounded
             width={24}
             height={24}

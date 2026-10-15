@@ -31,8 +31,8 @@ const Projectsection = () => {
           </div>
         </div>
 
-        <div className="py-[32px] lg:py-[0px] xl:gap-[20px]  z-1   text-white xl:px-[128px] lg:px-[64px] px-[32px] font-light flex flex-col gap-[16px]">
-          <h2 className="text-[32px] xl:text-[64px] leading-none font-bold">
+        <div className="py-[32px] md:py-[40px] lg:py-[0px] xl:gap-[20px] z-1 text-white px-[24px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[128px] font-light flex flex-col gap-[16px]">
+          <h2 className="text-[32px] md:text-[48px] xl:text-[64px] leading-none font-bold">
             PROJECTS{" "}
           </h2>
           <p className="text-white/90 md:w-1/2">
@@ -41,7 +41,7 @@ const Projectsection = () => {
             planning through development and delivery.
           </p>
         </div>
-        <div className="xl:px-[128px]  xl:border 3-[3000] border-white/10 bg-[#8B8EAC]/10 backdrop-blur-xs   flex flex-col font-light text-white ">
+        <div className="md:px-[24px] lg:px-[48px] xl:px-[128px] xl:border border-white/10 bg-[#8B8EAC]/10 backdrop-blur-xs flex flex-col font-light text-white">
           <Project
             imgsrc={[
               "/Pack/cover1.png",

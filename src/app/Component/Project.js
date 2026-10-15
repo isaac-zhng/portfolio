@@ -18,8 +18,8 @@ const Project = ({
   const cover = Array.isArray(imgsrc) ? imgsrc[0] : imgsrc;
 
   return (
-    <div className="flex flex-col lg:flex-row px-[32px] lg:px-[64px] xl:px-[32px] lg:gap-[108px]">
-      <div className="lg:w-1/2 py-[32px] md:py-[48px] lg:py-[80px]   xl:px-[20px] flex flex-col gap-[12px]">
+    <div className="flex flex-col md:flex-row px-[24px] sm:px-[32px] md:px-[40px] lg:px-[64px] xl:px-[32px] md:gap-[32px] lg:gap-[64px] xl:gap-[108px]">
+      <div className="md:w-1/2 py-[32px] md:py-[48px] lg:py-[64px] xl:py-[80px] xl:px-[20px] flex flex-col gap-[12px]">
         <div className="flex gap-[12px]">
           {tags.map((tag) => (
             <div
@@ -75,7 +75,7 @@ const Project = ({
           )}
         </div>
       </div>
-      <div className="lg:w-1/2 relative flex overflow-hidden md:p-[24px] md:bg-black/20 md:rounded-t-[12px] lg:rounded-none lg:border-l lg:border-r border-white/20">
+      <div className="md:w-1/2 relative flex overflow-hidden p-[16px] bg-black/20 rounded-[12px] md:p-[16px] lg:p-[24px] md:rounded-[12px] md:border-l md:border-r border-white/20">
         <div className="inset-[24px] z-4000 absolute bg-gray-500/5" />
         {cover ? (
           <Image
@@ -84,10 +84,10 @@ const Project = ({
             width={2000}
             height={1000}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className=" object-cover flex-1 h-[240px] md:h-[280px] lg:h-full shadow-lg xl:rounded-[12px] rounded-t-[8px] z-[3000] "
+            className="object-cover flex-1 h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] xl:h-[400px] shadow-lg rounded-[8px] md:rounded-[12px] z-[3000]"
           />
         ) : (
-          <div className="relative flex-1 h-[240px] md:h-[280px] lg:h-full overflow-hidden gap-[12px] rounded-[12px] flex flex-col items-center justify-center">
+          <div className="relative flex-1 h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] xl:h-[400px] overflow-hidden gap-[12px] rounded-[12px] flex flex-col items-center justify-center">
             <Image
               src="/isaac.jpg"
               alt=""
