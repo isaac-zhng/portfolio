@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="relative page-grain max-w-[1440px] bg-[#E3E5F6] w-[100%] m-auto "
+      className="relative page-grain w-full bg-[#E3E5F6]"
     >
       <Animation />
       {/* Below the fold. These used to fade in behind the intro's delay, so for

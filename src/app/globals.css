@@ -62,12 +62,11 @@ body {
      every frame that repainted the page during the intro also had to repaint
      the entire grain layer. Pinning it to the viewport gives it a stable
      composited layer, and the grain is uniform noise so it looks identical
-     while scrolling. Width is centred and capped to match #home's box. */
+     while scrolling. Its width follows the viewport so it covers wide screens. */
   position: fixed;
   top: 0;
   left: 50%;
   width: 100%;
-  max-width: 1440px;
   height: 100dvh;
   z-index: 2000;
   pointer-events: none;
