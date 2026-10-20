@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // Inter used to be constructed here and never applied (its CSS variable was
@@ -26,6 +27,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="google-analytics-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-E9J5G0JY0Q');`}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-E9J5G0JY0Q"
+          strategy="afterInteractive"
+        />
         {children}
       </body>
     </html>

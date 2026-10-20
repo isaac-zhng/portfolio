@@ -63,18 +63,6 @@ const Projectsection = () => {
             comingSoon
             tags={["React Native", "Expo", "TypeScript"]}
           />
-          <a
-            href="/dashboardproject/index.html"
-            className="group mx-[24px] mb-[24px] flex items-center justify-between rounded-[12px] border border-white/15 bg-white/5 p-[24px] text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            <span className="flex flex-col gap-[4px]">
-              <span className="text-[20px] font-semibold">dashboardproject</span>
-              <span className="text-[14px] text-white/70">Open my personal dashboard</span>
-            </span>
-            <span aria-hidden="true" className="text-[24px] transition-transform group-hover:translate-x-1">
-              ↗
-            </span>
-          </a>
         </div>
       </div>
     </motion.div>
