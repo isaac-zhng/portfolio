@@ -51,7 +51,7 @@ const Projectsection = () => {
             header="PACK!"
             text="A Mobile Puzzle Game for Tiger Snack Box, an international snack box company. I was hired as a UI/UX Designer to design the game and the website."
             link="/projects/pack"
-            figmaLink="https://www.figma.com/design/ncwvxsxmQiO9UKTgyYNWeJ/PACK--Mobile-Game?node-id=302-84498&t=8lEYesEWfz0EjCzO-1"
+            figmaLink="https://www.figma.com/design/Vy5Ee9enKwu3sJjgMYy7HK/PACK--Mobile-Game-OLD--Copy-?node-id=302-84498&t=F10M706rRTdP2cfY-1"
             tags={["UI/UX Design", "Mobile Game", "UX Research"]}
           />
           <div className="w-full h-[1px] bg-white/10" />
