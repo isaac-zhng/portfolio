@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Lock } from "./Icons";
 
 export default function OSSDashboardGate({ onAccessChange }) {
@@ -9,25 +9,6 @@ export default function OSSDashboardGate({ onAccessChange }) {
   const [accessGranted, setAccessGranted] = useState(false);
   const [isChecking, setIsChecking] = useState(false);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    let isMounted = true;
-
-    fetch("/api/oss-dashboard-demo", { method: "HEAD", cache: "no-store" })
-      .then((response) => {
-        if (response.ok && isMounted) {
-          setAccessGranted(true);
-          onAccessChange(true);
-        }
-      })
-      .catch(() => {
-        if (isMounted) setError("Couldn’t check demo access right now. Please try again.");
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [onAccessChange]);
 
   async function unlock(event) {
     event.preventDefault();
