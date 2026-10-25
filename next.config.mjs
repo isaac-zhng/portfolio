@@ -5,6 +5,9 @@ const nextConfig = {
     // asset on the page. AVIF first, WebP as the fallback.
     formats: ["image/avif", "image/webp"],
   },
+  outputFileTracingIncludes: {
+    "/api/oss-dashboard-demo": ["./private/oss-dashboard-demo.mp4"],
+  },
 };
 
 export default nextConfig;

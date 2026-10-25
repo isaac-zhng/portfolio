@@ -43,6 +43,13 @@ const Projectsection = () => {
         </div>
         <div className="md:px-[24px] lg:px-[48px] xl:px-[128px] xl:border border-white/10 bg-[#8B8EAC]/10 backdrop-blur-xs flex flex-col font-light text-white">
           <Project
+            header="OSS Dashboard"
+            text="Open Source Software Dashboard developed to track health metrics of multiple GitHub repos, specifically those in the Red Hat Applications Services suite."
+            gatedDemo
+            tags={["Open Source", "GitHub", "User Interviews"]}
+          />
+          <div className="w-full h-[1px] bg-white/10" />
+          <Project
             imgsrc={[
               "/Pack/cover1.png",
               //   "/Pack/cover2.png",
