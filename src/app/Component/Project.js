@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback, useState } from "react";
 import { ArrowRight, Lock } from "./Icons";
 import ProjectVideo from "./ProjectVideo";
 import OSSDashboardGate from "./OSSDashboardGate";
@@ -21,6 +21,9 @@ const Project = ({
   gatedDemo = false,
 }) => {
   const [demoAccessGranted, setDemoAccessGranted] = useState(false);
+  const handleDemoAccessChange = useCallback((hasAccess) => {
+    setDemoAccessGranted(hasAccess);
+  }, []);
   // Call sites pass the cover as a single-element array; next/image needs one
   // concrete source.
   const cover = Array.isArray(imgsrc) ? imgsrc[0] : imgsrc;
@@ -112,7 +115,7 @@ const Project = ({
           className={`inset-[24px] z-4000 absolute bg-gray-500/5 ${videoSrc || gatedDemo ? "pointer-events-none" : ""}`}
         />
         {gatedDemo ? (
-          <OSSDashboardGate onAccessChange={setDemoAccessGranted} />
+          <OSSDashboardGate onAccessChange={handleDemoAccessChange} />
         ) : videoSrc ? (
           <ProjectVideo
             src={videoSrc}

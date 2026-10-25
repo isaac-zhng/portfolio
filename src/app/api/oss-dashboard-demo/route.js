@@ -1,8 +1,13 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
+import { timingSafeEqual } from "node:crypto";
 import { createReadStream, statSync } from "node:fs";
 import path from "node:path";
 import { Readable } from "node:stream";
 import { NextResponse } from "next/server";
+import {
+  createOssDashboardSessionToken,
+  hasValidOssDashboardSession,
+  ossDashboardCookieName,
+} from "../../oss-dashboard-access";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -10,32 +15,15 @@ export const dynamic = "force-dynamic";
 const videoPath = path.join(process.cwd(), "private", "oss-dashboard-demo.mp4");
 const videoSize = statSync(videoPath).size;
 const contentType = "video/mp4";
-const cookieName = "oss_dashboard_access";
-
-function sessionToken(password) {
-  const secret = process.env.OSS_DASHBOARD_SESSION_SECRET;
-  if (!secret) return null;
-  return createHmac("sha256", secret)
-    .update(password)
-    .update(Buffer.from([0]))
-    .update("oss-dashboard-demo-access-v1")
-    .digest("base64url");
-}
 
 function validSession(request, password) {
   const cookieHeader = request.headers.get("cookie") ?? "";
   const session = cookieHeader
     .split(";")
     .map((part) => part.trim())
-    .find((part) => part.startsWith(`${cookieName}=`))
-    ?.slice(cookieName.length + 1);
-  if (!session) return false;
-
-  const token = sessionToken(password);
-  if (!token) return false;
-  const expected = Buffer.from(token);
-  const provided = Buffer.from(session);
-  return provided.length === expected.length && timingSafeEqual(provided, expected);
+    .find((part) => part.startsWith(`${ossDashboardCookieName}=`))
+    ?.slice(ossDashboardCookieName.length + 1);
+  return hasValidOssDashboardSession(session, password);
 }
 
 function unauthorized() {
@@ -73,7 +61,7 @@ export async function POST(request) {
     status: 204,
     headers: {
       "Cache-Control": "no-store",
-      "Set-Cookie": `${cookieName}=${sessionToken(configuredPassword)}; HttpOnly; SameSite=Lax; Path=/api/oss-dashboard-demo; Max-Age=3600${secure}`,
+      "Set-Cookie": `${ossDashboardCookieName}=${createOssDashboardSessionToken(configuredPassword)}; HttpOnly; SameSite=Lax; Path=/; Max-Age=3600${secure}`,
     },
   });
 }
