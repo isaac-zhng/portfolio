@@ -32,9 +32,7 @@ const Experience = ({ header, text, children, underline }) => {
           isOpen ? "max-h-[600px] py-[24px]" : "h-0"
         } overflow-hidden bg-gray-50 transition-all duration-300 px-[24px] w-full`}
       >
-        <div className="-ml-[24px]">
-          {children}
-        </div>
+        <div>{children}</div>
       </div>
     </div>
   );
