@@ -29,7 +29,7 @@ const Experience = ({ header, text, children, underline }) => {
       </button>
       <div
         className={`${
-          isOpen ? "max-h-[240px] py-[24px]" : "h-0"
+          isOpen ? "max-h-[600px] py-[24px]" : "h-0"
         } overflow-hidden bg-gray-50 transition-all duration-300 px-[24px] w-full`}
       >
         <div className="-ml-[24px]">

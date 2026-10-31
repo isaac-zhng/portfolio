@@ -36,9 +36,9 @@ const Experiencesection = () => {
           EXPERIENCE
         </h2>
         <p className="text-black/90 md:w-1/2">
-          Most recently, I worked as a Technical Product Manager at IBM, and
-          before that as an Accessibility & AI Research Team Lead at Rochester
-          Institute of Technology.
+          I currently work as an Engineer at FableML, and before that as a
+          Technical Product Manager at IBM and an Accessibility & AI Research
+          Team Lead at Rochester Institute of Technology.
         </p>
         <a
           href="/isaac_resume.pdf"
@@ -54,6 +54,19 @@ const Experiencesection = () => {
       </div>
 
       <div className="flex flex-col gap-[20px] xl:p-[24px] xl:rounded-[12px] xl:border border-[#5A56A2]/20">
+        <Experience header="Engineer" text="@ FableML" underline>
+          <p className="text-[14px] text-black/50">
+            At FableML, I work at the intersection of product and engineering
+            for an AI video creation platform. I facilitate feedback loops with
+            10+ filmmakers, turning their creative requirements into actionable
+            product features that shape what we build next. I also develop the
+            FableML website’s frontend, translating the startup’s brand into
+            high-converting landing pages, and author demo content and video
+            walkthroughs that highlight the AI copilot’s capabilities and help
+            creators move from idea to finished video faster.
+          </p>
+        </Experience>
+        <div className="w-full h-[1px] bg-black/10" />
         <Experience
           header="Technical Product Manager Intern"
           text="@ IBM"
