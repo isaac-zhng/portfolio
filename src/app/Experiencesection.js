@@ -36,9 +36,8 @@ const Experiencesection = () => {
           EXPERIENCE
         </h2>
         <p className="text-black/90 md:w-1/2">
-          I currently work as an Engineer at FableML, and before that as a
-          Technical Product Manager at IBM and an Accessibility & AI Research
-          Team Lead at Rochester Institute of Technology.
+          Currently working on FableML. Previous experience as a Technical
+          Product Manager Intern at IBM and Researcher at RIT.
         </p>
         <a
           href="/isaac_resume.pdf"
